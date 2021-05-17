@@ -1,0 +1,61 @@
+import React, { useEffect, useRef } from "react";
+import { Button, Container } from "../../global-styles";
+import { H2, H3, P } from "./landing-text-styles";
+import { Power3, TimelineLite } from "gsap";
+
+const LandingText = () => {
+  let tl = new TimelineLite({ delay: 1 });
+
+  let textRef = useRef();
+
+  useEffect(() => {
+    let first = textRef.children[0];
+    let second = textRef.children[1];
+    let third = textRef.children[2];
+    let fourth = textRef.children[3];
+    let fifth = textRef.children[4];
+
+    tl.from(first, 1, { opacity: 0, y: 50, ease: Power3.easeOut })
+      .from(second, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.3)
+      .from(third, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.6)
+      .from(fourth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.9)
+      .from(fifth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 1.2);
+
+    console.log(first);
+  }, []);
+
+  return (
+    <Container
+      flexDir="column"
+      align="center"
+      p="200px 0 200px 0"
+      alignText="center"
+      ref={(el) => (textRef = el)}
+    >
+      <P col={true}>Hi, my name is</P>
+      <H2>Nikola Vujić.</H2>
+      <H3>I make web apps.</H3>
+      <P col={false} maxW={true}>
+        I'm a 18 year old front-end Web developer from Stara Pazova, Serbia. I
+        have a passion for creating dynamic, exquisite looking websites using
+        the latest known technologies.
+      </P>
+      <Container m="8px 0 0 0">
+        <Button
+          col="var(--main)"
+          bor="1px solid var(--main)"
+          borR="5px"
+          justify="center"
+          align="center"
+          p="8px 16px"
+          bgH="var(--main)"
+          colH="#111"
+        >
+          Contact
+        </Button>
+      </Container>
+    </Container>
+  );
+};
+
+export default LandingText;
