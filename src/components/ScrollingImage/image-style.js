@@ -41,7 +41,7 @@ export const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.35);
     display: none;
     justify-content: center;
     align-items: center;
@@ -69,7 +69,7 @@ export const ImageContainer = styled.div`
   }
 
   &:active {
-    transition: background 0.5s linear;
+    transition: background 0.2s linear;
     background: var(--main);
   }
 
@@ -86,4 +86,9 @@ export const ImageContainer = styled.div`
     width: 270px;
     height: 150px;
   }
+`;
+
+export const Redirect = styled.a`
+  text-decoration: none;
+  color: #fff;
 `;

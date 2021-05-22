@@ -103,23 +103,6 @@ export const TextH1 = styled.h1`
   }
 `;
 
-export const Overlay = styled.div`
-  width: ${({ w }) => w};
-  height: ${({ h }) => h};
-  display: flex;
-  justify-content: ${({ justify }) => justify};
-  align-items: ${({ align }) => align};
-  flex-direction: ${({ flexDir }) => flexDir};
-  background: ${({ bg }) => bg};
-  padding: ${({ p }) => p};
-  margin: ${({ m }) => m};
-  border-radius: ${({ borR }) => borR};
-
-  @media screen and (max-width: 768px) {
-    padding: ${({ pM }) => pM};
-  }
-`;
-
 export const Button = styled.div`
   width: ${({ w }) => w};
   height: ${({ h }) => h};
@@ -135,6 +118,7 @@ export const Button = styled.div`
   color: ${({ col }) => col};
   font-size: ${({ fontS }) => fontS};
   font-weight: ${({ fontW }) => fontW};
+  font-family: ${({ fontF }) => fontF};
   cursor: pointer;
   a {
     color: ${({ col }) => col};
@@ -163,19 +147,6 @@ export const Img = styled.img`
   border: ${({ bor }) => bor};
 `;
 
-export const DivImg = styled.div`
-  background-image: url(${({ bgImage }) => bgImage});
-  background-position: ${({ bgPos }) => bgPos};
-  background-size: ${({ bgSize }) => bgSize};
-  border-radius: ${({ borR }) => borR};
-  width: ${({ w }) => w};
-  height: ${({ h }) => h};
-  display: flex;
-  justify-content: ${({ justify }) => justify};
-  align-items: ${({ align }) => align};
-  flex-direction: ${({ flexDir }) => flexDir};
-`;
-
 export const Main = styled.section`
   padding: 0 150px;
 
@@ -201,6 +172,7 @@ export const Heading = styled.h2`
   font-weight: 500;
   padding-bottom: 5px;
   border-bottom: 1px solid #4a4a4a;
+  margin: ${({ m }) => m};
 
   &:before {
     position: relative;
@@ -262,5 +234,27 @@ export const SectionHeading = styled.h2`
     &:after {
       width: 80px;
     }
+  }
+`;
+
+export const SideIconsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+
+  .line {
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: #acacac;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;

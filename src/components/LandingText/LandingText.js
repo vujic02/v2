@@ -28,7 +28,7 @@ const LandingText = () => {
     <Container
       flexDir="column"
       align="center"
-      p="200px 0 200px 0"
+      p="200px 0 400px 0"
       alignText="center"
       ref={(el) => (textRef = el)}
     >
@@ -40,16 +40,22 @@ const LandingText = () => {
         have a passion for creating dynamic, exquisite looking websites using
         the latest known technologies.
       </P>
-      <Container m="8px 0 0 0">
+      <Container m="1rem 0 0 0">
         <Button
           col="var(--main)"
           bor="1px solid var(--main)"
           borR="5px"
           justify="center"
           align="center"
-          p="8px 16px"
+          p=".8rem 1.5rem"
           bgH="var(--main)"
           colH="#111"
+          fontS="1rem"
+          fontW="500"
+          fontF="'Montserrat', sans-serif"
+          onClick={() => {
+            window.open("mailto:vujicn02@gmail.com");
+          }}
         >
           Contact
         </Button>

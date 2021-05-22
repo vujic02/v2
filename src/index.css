@@ -62,3 +62,7 @@ code {
   margin-left: 20px;
   background-color: #fff;
 }
+
+.blur {
+  filter: blur(3px);
+}

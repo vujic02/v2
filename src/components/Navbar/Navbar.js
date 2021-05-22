@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Img, TextP } from "../../global-styles";
-import { Nav } from "./navbar-styles";
+import { Nav, NavLinks, MenuIcon } from "./navbar-styles";
 import { Link } from "react-scroll";
 import { TweenMax, Power3, TimelineLite } from "gsap";
 
-const Navbar = () => {
+const Navbar = ({ show, setIsOpened }) => {
   const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
 
@@ -50,8 +50,8 @@ const Navbar = () => {
       <Container w="60px" justify="center" p="0 0 0 25px" ref={navLogo}>
         <Img src="./logo.png" h="60px" w="60px" objFit="cover" />
       </Container>
-      <Container p="0 25px 0 0" ref={(el) => (navLinks = el)}>
-        <Link to="about" spy={true} smooth={true} duration={500} offset={-290}>
+      <NavLinks ref={(el) => (navLinks = el)} show={show}>
+        <Link to="about" spy={true} smooth={true} duration={500} offset={-200}>
           <TextP
             col="var(--main)"
             fontS="1rem"
@@ -63,7 +63,13 @@ const Navbar = () => {
             <span className="nav-link">About</span>
           </TextP>
         </Link>
-        <Link to="projects" spy={true} smooth={true} duration={500}>
+        <Link
+          to="projects"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={100}
+        >
           <TextP
             col="var(--main)"
             fontS="1rem"
@@ -87,7 +93,11 @@ const Navbar = () => {
             <span className="nav-link">Contact</span>
           </TextP>
         </Link>
-      </Container>
+      </NavLinks>
+      <MenuIcon
+        show={show}
+        onClick={() => setIsOpened((prev) => !prev)}
+      ></MenuIcon>
     </Nav>
   );
 };

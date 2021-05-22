@@ -1,23 +1,36 @@
 import React from "react";
-import { ImageContainer, GithubIcon, WebpageIcon } from "./image-style";
+import {
+  ImageContainer,
+  GithubIcon,
+  WebpageIcon,
+  Redirect,
+} from "./image-style";
 import { Container } from "../../global-styles";
 
-const ScrollingImage = ({ imgUrl, imgHeight, trans }) => {
+const ScrollingImage = ({
+  imgUrl,
+  imgHeight,
+  trans,
+  githubUrl,
+  livepageUrl,
+}) => {
   return (
-    <ImageContainer imgUrl={imgUrl} imgHeight={imgHeight} trans={trans}>
-      <div className="overlay">
-        <Container w="70%" justify="space-around">
-          <a href="http://hello.com">
-            <GithubIcon />
-            <p className="text-visible">Github page</p>
-          </a>
-          <a href="http://helloworld.com">
-            <WebpageIcon />
-            <p className="text-visible">Live website</p>
-          </a>
-        </Container>
-      </div>
-    </ImageContainer>
+    <Redirect href={githubUrl}>
+      <ImageContainer imgUrl={imgUrl} imgHeight={imgHeight} trans={trans}>
+        <div className="overlay">
+          <Container w="70%" justify="space-around">
+            <a href={githubUrl}>
+              <GithubIcon />
+              <p className="text-visible">Github page</p>
+            </a>
+            <a href={livepageUrl}>
+              <WebpageIcon />
+              <p className="text-visible">Live website</p>
+            </a>
+          </Container>
+        </div>
+      </ImageContainer>
+    </Redirect>
   );
 };
 

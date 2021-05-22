@@ -5,6 +5,8 @@ export const urls = [
     transition: "2.8s",
     technologies: "React.js, Styled-Components, PostgreSQL",
     name: "DV Hotels",
+    githubUrl: "https://github.com/vujic02/DV-Hotels",
+    livepageUrl: "https://github.com/vujic02/DV-Hotels",
   },
   {
     imgUrl: "./websites/Easy-Shop.png",
@@ -12,6 +14,8 @@ export const urls = [
     transition: "3s",
     technologies: "Next.js, Styled-Components, JSON-Server",
     name: "Easy Shop (E-Commerce)",
+    githubUrl: "https://github.com/vujic02/Easy-Shop",
+    livepageUrl: "https://easy-shop-vujic02.netlify.app/",
   },
   {
     imgUrl: "./websites/Hbo-Go.png",
@@ -19,6 +23,8 @@ export const urls = [
     transition: "3s",
     technologies: "React.js, Styled-Components, TMDB API",
     name: "HBO GO Clone",
+    githubUrl: "https://github.com/vujic02/HBO-GO-clone",
+    livepageUrl: "https://hbo-go-clone.web.app/",
   },
   {
     imgUrl: "./websites/Google-Keep.png",
@@ -26,6 +32,8 @@ export const urls = [
     transition: "0.8s",
     technologies: "React.js, Firebase",
     name: "Google Keep clone",
+    githubUrl: "https://github.com/vujic02/google-keep-clone",
+    livepageUrl: "https://keep-notes-f3306.web.app/",
   },
   {
     imgUrl: "./websites/Ui-Webpage.png",
@@ -33,6 +41,8 @@ export const urls = [
     transition: "4.8s",
     technologies: "React.js, Styled-Components",
     name: "Simple UI webpage",
+    githubUrl: "https://github.com/vujic02/UI-Web-Page",
+    livepageUrl: "https://react-ui-webpage.web.app/",
   },
   {
     imgUrl: "./websites/Nasa-Clone.png",
@@ -40,5 +50,13 @@ export const urls = [
     transition: "5s",
     technologies: "HTML5, CSS3, JavaScript, THREE.js",
     name: "NASA Solar System clone",
+    githubUrl: "https://github.com/vujic02/NASA-Planet-Pages-Clone",
+    livepageUrl: "https://solar-system-exploration.netlify.app/",
   },
 ];
+
+export const socialMedia = {
+  instagram: "https://www.instagram.com/_vujic02/",
+  codepen: "https://codepen.io/vujic02",
+  github: "https://github.com/vujic02",
+};
