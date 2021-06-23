@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Img, TextP } from "../../global-styles";
+import { Container, Img, TextP, Button } from "../../global-styles";
 import { Nav, NavLinks, MenuIcon } from "./navbar-styles";
 import { Link } from "react-scroll";
 import { TweenMax, Power3, TimelineLite } from "gsap";
@@ -25,7 +25,8 @@ const Navbar = ({ show, setIsOpened }) => {
   useEffect(() => {
     let first = navLinks.firstElementChild;
     let second = navLinks.children[1];
-    let third = navLinks.lastElementChild;
+    let third = navLinks.children[2];
+    let fourth = navLinks.children[3];
 
     TweenMax.from(navLogo.current, 1.5, {
       opacity: 0,
@@ -34,7 +35,8 @@ const Navbar = ({ show, setIsOpened }) => {
 
     tl.from(first, 1, { opacity: 0, y: -100, ease: Power3.easeOut })
       .from(second, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.3)
-      .from(third, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.6);
+      .from(third, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.6)
+      .from(fourth, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.9);
   }, []);
 
   useEffect(() => {
@@ -93,11 +95,23 @@ const Navbar = ({ show, setIsOpened }) => {
             <span className="nav-link">Contact</span>
           </TextP>
         </Link>
+          <Button
+            col="var(--main)"
+            fontS="1.2rem"
+            m="0 1rem 0 0"
+            cur="pointer"
+            fontF="'Inconsolata', monospace"
+            bor="1px solid var(--main)"
+            p=".5rem"
+            bgH="var(--main)"
+            colH="var(--white)"
+          >
+          <a href="/cv.pdf">Resume/CV</a>
+          </Button>
       </NavLinks>
       <MenuIcon
-        show={show}
         onClick={() => setIsOpened((prev) => !prev)}
-      ></MenuIcon>
+      />
     </Nav>
   );
 };

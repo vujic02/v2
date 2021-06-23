@@ -21,7 +21,6 @@ const LandingText = () => {
       .from(fourth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.9)
       .from(fifth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 1.2);
 
-    console.log(first);
   }, []);
 
   return (

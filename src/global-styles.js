@@ -158,9 +158,10 @@ export const Main = styled.section`
     padding: 0 50px;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 428px) {
     padding: 0 25px;
   }
+
 `;
 
 export const Heading = styled.h2`

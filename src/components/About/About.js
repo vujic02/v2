@@ -36,81 +36,108 @@ const About = () => {
   let textsRef = useRef();
   let itemsRef = useRef();
   let imgRef = useRef();
+  let aboutSectionRef = useRef();
+  let count = 0;
+
+  const buildConditionalTween = (mediaQuery) => {
+    if(mediaQuery.matches && count < 1 ) {
+      let section = sectionRef.current;
+      count++;
+
+      let tl = new TimelineMax({
+        scrollTrigger: {
+          trigger: section,
+          start: "center 70%",
+          end: "+=200",
+        },
+      });
+
+  
+      tl.from(
+        section,
+        {
+          opacity: 0,
+          y: 100,
+          ease: Power3.easeOut,
+          duration: 1,
+        },
+        0.3
+      )
+        .from(
+          textsRef.children[0],
+          { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 },
+          0.5
+        )
+        .from(
+          textsRef.children[1],
+          { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 },
+          0.7
+        )
+        .from(
+          itemsRef.children[0],
+          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
+          0.9
+        )
+        .from(
+          itemsRef.children[1],
+          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
+          1
+        )
+        .from(
+          itemsRef.children[2],
+          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
+          1.1
+        )
+        .from(
+          itemsRef.children[3],
+          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
+          1.2
+        )
+        .from(
+          itemsRef.children[4],
+          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
+          1.3
+        )
+        .from(
+          itemsRef.children[5],
+          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
+          1.6
+        )
+        .from(imgRef.current, {
+          opacity: 0,
+          x: 100,
+          ease: Power3.easeOut,
+          duration: 1,
+        });
+      } 
+      else {
+        gsap.from(aboutSectionRef.current, {
+          opacity: 0,
+          ease: Power3.easeOut,
+          duration: 1,
+          scrollTrigger: {
+            trigger: aboutSectionRef.current,
+            start: "center bottom",
+            end: "+=200",
+          },
+          delay: 0.5,
+        });
+      }
+    }
 
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    let section = sectionRef.current;
-
-    let tl = new TimelineMax({
-      scrollTrigger: {
-        trigger: section,
-        start: "center 70%",
-        end: "+=200",
-      },
-    });
-
-    tl.from(
-      section,
-      {
-        opacity: 0,
-        y: 100,
-        ease: Power3.easeOut,
-        duration: 1,
-      },
-      0.3
-    )
-      .from(
-        textsRef.children[0],
-        { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 },
-        0.5
-      )
-      .from(
-        textsRef.children[1],
-        { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 },
-        0.7
-      )
-      .from(
-        itemsRef.children[0],
-        { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-        0.9
-      )
-      .from(
-        itemsRef.children[1],
-        { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-        1
-      )
-      .from(
-        itemsRef.children[2],
-        { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-        1.1
-      )
-      .from(
-        itemsRef.children[3],
-        { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-        1.2
-      )
-      .from(
-        itemsRef.children[4],
-        { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-        1.3
-      )
-      .from(
-        itemsRef.children[5],
-        { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-        1.6
-      )
-      .from(imgRef.current, {
-        opacity: 0,
-        x: 100,
-        ease: Power3.easeOut,
-        duration: 1,
-      });
+    let mediaQuery = window.matchMedia("(min-width: 769px)");
+  
+    buildConditionalTween(mediaQuery);
+  
+    mediaQuery.addListener(buildConditionalTween);
   }, []);
 
   return (
     <Container justify="center" name="about">
-      <Container flexDir="column" maxW="900px">
+      <Container flexDir="column" maxW="900px" ref={aboutSectionRef}>
         <SectionHeading className="section-heading" ref={sectionRef}>
           About
         </SectionHeading>
@@ -135,8 +162,8 @@ const About = () => {
               journey as a web developer started in January of 2020. The journey
               started out really hard, but I kept trying, pushing myself even
               harder. In the process, I learned that I like to challenge myself
-              and to push my limits. I'm constantly looking forward to improve
-              my skills, and to meet new people along the way.
+              and to push my limits. I'm constantly looking forward to improving
+              my skills and meeting new people along the way.
             </TextP>
             <TextP
               fontS="1.2rem"

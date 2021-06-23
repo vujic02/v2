@@ -5,35 +5,68 @@ import { urls } from "../../utils/data";
 import gsap, { Power3, Power4 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+
 const Projects = () => {
   let sectionRef = useRef();
+  let section = sectionRef.current;
 
   gsap.registerPlugin(ScrollTrigger);
 
+  const buildConditionalTween = (mediaQuery) => {
+    if(mediaQuery.matches) {
+      gsap.from(section, {
+        opacity: 0,
+        x: 200,
+        ease: Power3.easeOut,
+        duration: 1,
+        scrollTrigger: section,
+        delay: 0.5,
+      });
+    
+      gsap.from(".project", {
+        opacity: 0,
+        y: 100,
+        ease: Power4.easeOut,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".project",
+          start: "center bottom",
+          end: "+=200",
+        },
+        stagger: 0.5,
+      });
+      } else {
+        gsap.from(section, {
+          opacity: 0,
+          ease: Power3.easeOut,
+          duration: 1,
+          scrollTrigger: section,
+          delay: 0.5,
+        });
+      
+        gsap.from(".project", {
+          opacity: 0,
+          ease: Power4.easeOut,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".project",
+            start: "center bottom",
+            end: "+=200",
+          },
+          stagger: 0.5,
+        });
+      }
+    }
+
   useEffect(() => {
-    let section = sectionRef.current;
+    let mediaQuery = window.matchMedia("(min-width: 769px)");
 
-    gsap.from(section, {
-      opacity: 0,
-      x: 200,
-      ease: Power3.easeOut,
-      duration: 1,
-      scrollTrigger: section,
-      delay: 0.5,
-    });
+    buildConditionalTween(mediaQuery);
 
-    gsap.from(".project", {
-      opacity: 0,
-      y: 100,
-      ease: Power4.easeOut,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".project",
-        start: "center bottom",
-        end: "+=200",
-      },
-      stagger: 0.5,
-    });
+
+    mediaQuery.addListener(buildConditionalTween);
+
   }, []);
 
   return (

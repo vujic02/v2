@@ -2,19 +2,26 @@ import React from "react";
 import {
   FooterContainer,
   GithubIcon,
-  CodepenIcon,
+  LinkedinIcon,
   InstagramIcon,
   IconsContainer,
   FooterText,
 } from "./footer-styles";
+import { socialMedia } from "../../utils/data";
 
 const Footer = () => {
   return (
     <FooterContainer>
       <IconsContainer>
+        <a href={socialMedia.github}>
         <GithubIcon m="0" />
-        <CodepenIcon m="0" />
+        </a>
+        <a href={socialMedia.linkedin}>
+        <LinkedinIcon m="0" />
+        </a>
+        <a href={socialMedia.instagram}>
         <InstagramIcon m="0" />
+        </a>
       </IconsContainer>
       <FooterText>
         Built & Designed by: 

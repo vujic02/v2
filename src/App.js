@@ -1,14 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Main } from "./global-styles";
-import LandingText from "./components/LandingText/LandingText";
-import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/Sidebar/Sidebar";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
-import Background from "./components/Background/Background";
-import Footer from "./components/Footer/Footer";
-import SideIcons from "./components/SideIcons/SideIcons";
+import {Navbar, Sidebar, Background, About, LandingText, Projects, Contact, SideIcons, Footer} from "./components/index"
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);

@@ -57,6 +57,6 @@ export const urls = [
 
 export const socialMedia = {
   instagram: "https://www.instagram.com/_vujic02/",
-  codepen: "https://codepen.io/vujic02",
+  linkedin: "https://www.linkedin.com/in/nikola-vuji%C4%87/",
   github: "https://github.com/vujic02",
 };

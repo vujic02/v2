@@ -17,6 +17,7 @@ export const Nav = styled.nav`
 export const NavLinks = styled.div`
   padding: 0 30px 0 0;
   display: ${({ show }) => (show ? "none" : "flex")};
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -27,7 +28,7 @@ export const MenuIcon = styled(HiMenuAlt3)`
   display: none;
 
   @media screen and (max-width: 768px) {
-    display: ${({ show }) => (show ? "none" : "flex")};
+    display: ${({ showIcon }) => (showIcon ? "none" : "flex")};
     position: absolute;
     top: 1rem;
     right: 1.5rem;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FiGithub, FiInstagram, FiCodepen } from "react-icons/fi";
+import { AiOutlineLinkedin } from "react-icons/ai";
 
 export const FooterContainer = styled.footer`
   display: grid;
@@ -56,7 +57,7 @@ export const InstagramIcon = styled(FiInstagram)`
   }
 `;
 
-export const CodepenIcon = styled(FiCodepen)`
+export const LinkedinIcon = styled(AiOutlineLinkedin)`
   width: 30px;
   height: 30px;
   color: #fff;

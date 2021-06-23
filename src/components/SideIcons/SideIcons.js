@@ -4,7 +4,7 @@ import { Power2, TimelineLite } from "gsap";
 import {
   GithubIcon,
   InstagramIcon,
-  CodepenIcon,
+  LinkedinIcon,
 } from "../Footer/footer-styles";
 import { socialMedia } from "../../utils/data";
 
@@ -28,8 +28,8 @@ const SideIcons = () => {
       <a href={socialMedia.github}>
         <GithubIcon m="10px 0 0 0" />
       </a>
-      <a href={socialMedia.codepen}>
-        <CodepenIcon m="10px 0 0 0" />
+      <a href={socialMedia.linkedin}>
+        <LinkedinIcon m="10px 0 0 0" />
       </a>
       <a href={socialMedia.instagram}>
         <InstagramIcon m="10px 0 10px 0" />
