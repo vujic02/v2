@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../../global-styles";
+import { Container, Button } from "../../global-styles";
 import {
   SidebarClose,
   SidebarLink,
@@ -48,6 +48,19 @@ const Sidebar = ({ show, setIsOpened }) => {
           >
             <span className="num">03.</span> Contact
           </SidebarLink>
+          <Button
+            col="var(--main)"
+            fontS="1.2rem"
+            cur="pointer"
+            fontF="'Inconsolata', monospace"
+            bor="1px solid var(--main)"
+            p=".5rem"
+            bgH="var(--main)"
+            colH="var(--white)"
+            onClick={() => setIsOpened((prev) => !prev)}
+          >
+            <a href="/cv.pdf">Resume/CV</a>
+          </Button>
         </Container>
       </SidebarWrapper>
     </SidebarStyled>

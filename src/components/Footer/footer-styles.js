@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FiGithub, FiInstagram, FiCodepen } from "react-icons/fi";
+import { FiGithub, FiInstagram } from "react-icons/fi";
 import { AiOutlineLinkedin } from "react-icons/ai";
 
 export const FooterContainer = styled.footer`

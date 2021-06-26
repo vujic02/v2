@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { Button, Container, Heading, TextH1, TextP } from "../../global-styles";
-import gsap, { Power1, TimelineLite } from "gsap";
+import gsap, { Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Contact = () => {
-  let tl = new TimelineLite();
-
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {

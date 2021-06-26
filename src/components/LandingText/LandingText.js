@@ -20,8 +20,7 @@ const LandingText = () => {
       .from(third, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.6)
       .from(fourth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.9)
       .from(fifth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 1.2);
-
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Container

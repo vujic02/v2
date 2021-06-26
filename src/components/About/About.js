@@ -37,22 +37,21 @@ const About = () => {
   let itemsRef = useRef();
   let imgRef = useRef();
   let aboutSectionRef = useRef();
-  let count = 0;
 
-  const buildConditionalTween = (mediaQuery) => {
-    if(mediaQuery.matches && count < 1 ) {
-      let section = sectionRef.current;
-      count++;
+  gsap.registerPlugin(ScrollTrigger);
 
-      let tl = new TimelineMax({
-        scrollTrigger: {
-          trigger: section,
-          start: "center 70%",
-          end: "+=200",
-        },
-      });
+  useEffect(() => {
+    let section = sectionRef.current;
 
-  
+    let tl = new TimelineMax({
+      scrollTrigger: {
+        trigger: section,
+        start: "center 70%",
+        end: "+=200",
+      },
+    });
+
+    if (window.innerWidth > 769) {
       tl.from(
         section,
         {
@@ -109,30 +108,23 @@ const About = () => {
           ease: Power3.easeOut,
           duration: 1,
         });
-      } 
-      else {
-        gsap.from(aboutSectionRef.current, {
-          opacity: 0,
-          ease: Power3.easeOut,
-          duration: 1,
-          scrollTrigger: {
-            trigger: aboutSectionRef.current,
-            start: "center bottom",
-            end: "+=200",
-          },
-          delay: 0.5,
-        });
-      }
+    } else if (window.innerWidth < 769) {
+      gsap.from(aboutSectionRef.current, {
+        opacity: 0,
+        ease: Power3.easeOut,
+        duration: 1,
+        scrollTrigger: {
+          trigger: aboutSectionRef.current,
+          start: "center bottom",
+          end: "+=200",
+        },
+        delay: 0.5,
+      });
     }
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 769px)");
-  
-    buildConditionalTween(mediaQuery);
-  
-    mediaQuery.addListener(buildConditionalTween);
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
@@ -185,7 +177,7 @@ const About = () => {
           </Container>
           <Img
             ref={imgRef}
-            src="./my-image.png"
+            src="./misc/my-image.png"
             w="320px"
             h="400px"
             objFit="cover"

@@ -37,12 +37,12 @@ const Navbar = ({ show, setIsOpened }) => {
       .from(second, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.3)
       .from(third, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.6)
       .from(fourth, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.9);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    return function onUnmount() {
+    return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
@@ -50,7 +50,7 @@ const Navbar = ({ show, setIsOpened }) => {
   return (
     <Nav visible={visible}>
       <Container w="60px" justify="center" p="0 0 0 25px" ref={navLogo}>
-        <Img src="./logo.png" h="60px" w="60px" objFit="cover" />
+        <Img src="./misc/logo.png" h="60px" w="60px" objFit="cover" />
       </Container>
       <NavLinks ref={(el) => (navLinks = el)} show={show}>
         <Link to="about" spy={true} smooth={true} duration={500} offset={-200}>
@@ -95,23 +95,21 @@ const Navbar = ({ show, setIsOpened }) => {
             <span className="nav-link">Contact</span>
           </TextP>
         </Link>
-          <Button
-            col="var(--main)"
-            fontS="1.2rem"
-            m="0 1rem 0 0"
-            cur="pointer"
-            fontF="'Inconsolata', monospace"
-            bor="1px solid var(--main)"
-            p=".5rem"
-            bgH="var(--main)"
-            colH="var(--white)"
-          >
+        <Button
+          col="var(--main)"
+          fontS="1.2rem"
+          m="0 1rem 0 0"
+          cur="pointer"
+          fontF="'Inconsolata', monospace"
+          bor="1px solid var(--main)"
+          p=".5rem"
+          bgH="var(--main)"
+          colH="var(--white)"
+        >
           <a href="/cv.pdf">Resume/CV</a>
-          </Button>
+        </Button>
       </NavLinks>
-      <MenuIcon
-        onClick={() => setIsOpened((prev) => !prev)}
-      />
+      <MenuIcon onClick={() => setIsOpened((prev) => !prev)} />
     </Nav>
   );
 };

@@ -21,7 +21,7 @@ const SideIcons = () => {
       .from(icon2, 1, { ease: Power2.easeInOut, opacity: 0, x: -50 }, 0.3)
       .from(icon3, 1, { ease: Power2.easeInOut, opacity: 0, x: 50 }, 0.6)
       .from(line, 1, { ease: Power2.easeInOut, opacity: 0, y: 100 }, 0.9);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <SideIconsContainer ref={(el) => (iconsRef = el)}>

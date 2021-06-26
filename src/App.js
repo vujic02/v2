@@ -1,6 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Main } from "./global-styles";
-import {Navbar, Sidebar, Background, About, LandingText, Projects, Contact, SideIcons, Footer} from "./components/index"
+import {
+  Navbar,
+  Sidebar,
+  Background,
+  About,
+  LandingText,
+  Projects,
+  Contact,
+  SideIcons,
+  Footer,
+} from "./components/index";
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
