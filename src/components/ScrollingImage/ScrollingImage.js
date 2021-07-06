@@ -19,11 +19,11 @@ const ScrollingImage = ({
       <ImageContainer imgUrl={imgUrl} imgHeight={imgHeight} trans={trans}>
         <div className="overlay">
           <Container w="70%" justify="space-around">
-            <a href={githubUrl}>
+            <a href={githubUrl} target="_blank" rel="noreferrer">
               <GithubIcon />
               <p className="text-visible">Github page</p>
             </a>
-            <a href={livepageUrl}>
+            <a href={livepageUrl} target="_blank" rel="noreferrer">
               <WebpageIcon />
               <p className="text-visible">Live website</p>
             </a>

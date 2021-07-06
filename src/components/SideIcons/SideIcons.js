@@ -25,13 +25,13 @@ const SideIcons = () => {
 
   return (
     <SideIconsContainer ref={(el) => (iconsRef = el)}>
-      <a href={socialMedia.github}>
+      <a href={socialMedia.github} target="_blank" rel="noreferrer">
         <GithubIcon m="10px 0 0 0" />
       </a>
-      <a href={socialMedia.linkedin}>
+      <a href={socialMedia.linkedin} target="_blank" rel="noreferrer">
         <LinkedinIcon m="10px 0 0 0" />
       </a>
-      <a href={socialMedia.instagram}>
+      <a href={socialMedia.instagram} target="_blank" rel="noreferrer">
         <InstagramIcon m="10px 0 10px 0" />
       </a>
       <div className="line"></div>

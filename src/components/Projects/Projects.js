@@ -71,7 +71,12 @@ const Projects = () => {
         gridGapM1="30px"
       >
         {urls.map((url, idx) => (
-          <Container key={idx} flexDir="column" className="project">
+          <Container
+            key={idx}
+            flexDir="column"
+            align="center"
+            className="project"
+          >
             <ScrollingImage
               imgUrl={url.imgUrl}
               imgHeight={url.imgHeight}

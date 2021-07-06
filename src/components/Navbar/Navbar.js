@@ -106,7 +106,9 @@ const Navbar = ({ show, setIsOpened }) => {
           bgH="var(--main)"
           colH="var(--white)"
         >
-          <a href="/cv.pdf">Resume/CV</a>
+          <a href="/cv.pdf" target="_blank" rel="noreferrer">
+            Resume/CV
+          </a>
         </Button>
       </NavLinks>
       <MenuIcon onClick={() => setIsOpened((prev) => !prev)} />

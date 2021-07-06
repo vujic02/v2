@@ -59,7 +59,9 @@ const Sidebar = ({ show, setIsOpened }) => {
             colH="var(--white)"
             onClick={() => setIsOpened((prev) => !prev)}
           >
-            <a href="/cv.pdf">Resume/CV</a>
+            <a href="/cv.pdf" target="_blank" rel="noreferrer">
+              Resume/CV
+            </a>
           </Button>
         </Container>
       </SidebarWrapper>
