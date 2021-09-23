@@ -6,7 +6,7 @@ export const urls = [
     technologies: "React.js, MongoDB, Express.js, Node.js, Styled-Components",
     name: "DV Hotels",
     githubUrl: "https://github.com/vujic02/DV-Hotels",
-    livepageUrl: "https://github.com/vujic02/DV-Hotels",
+    livepageUrl: "https://dv-hotels.netlify.app/",
   },
   {
     imgUrl: "./websites/Easy-Shop.png",
