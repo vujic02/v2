@@ -18,22 +18,22 @@ const Projects = () => {
         opacity: 0,
         x: 200,
         ease: Power3.easeOut,
-        duration: 1,
+        duration: 0.4,
         scrollTrigger: section,
-        delay: 0.5,
+        delay: 0.2,
       });
 
       gsap.from(".project", {
         opacity: 0,
         y: 100,
         ease: Power4.easeOut,
-        duration: 1,
+        duration: 0.4,
         scrollTrigger: {
           trigger: ".project",
           start: "center bottom",
           end: "+=200",
         },
-        stagger: 0.5,
+        stagger: 0.3,
       });
     } else if (window.innerWidth < 769) {
       gsap.from(section, {
@@ -63,20 +63,9 @@ const Projects = () => {
       <Container justify="center" ref={sectionRef}>
         <Heading m="3rem 0">Projects</Heading>
       </Container>
-      <Grid
-        cols="repeat(2, 550px)"
-        justify="center"
-        gridGap="60px 0"
-        colsM1="1fr"
-        gridGapM1="30px"
-      >
+      <Grid cols="repeat(2, 550px)" justify="center" gridGap="60px 0" colsM1="1fr" gridGapM1="30px">
         {urls.map((url, idx) => (
-          <Container
-            key={idx}
-            flexDir="column"
-            align="center"
-            className="project"
-          >
+          <Container key={idx} flexDir="column" align="center" className="project">
             <ScrollingImage
               imgUrl={url.imgUrl}
               imgHeight={url.imgHeight}
@@ -85,22 +74,10 @@ const Projects = () => {
               livepageUrl={url.livepageUrl}
             />
             <Container justify="center" align="center" flexDir="column">
-              <TextP
-                fontS="1rem"
-                fontW="400"
-                fontF="'Montserrat', sans-serif"
-                col="#ccd6f6"
-                m=".5rem 0 0 0"
-              >
+              <TextP fontS="1rem" fontW="400" fontF="'Montserrat', sans-serif" col="#ccd6f6" m=".5rem 0 0 0">
                 {url.name}
               </TextP>
-              <TextP
-                fontS=".8rem"
-                fontW="200"
-                fontF="'Montserrat', sans-serif"
-                col="#fff"
-                m=".5rem 0 0 0"
-              >
+              <TextP fontS=".8rem" fontW="200" fontF="'Montserrat', sans-serif" col="#fff" m=".5rem 0 0 0">
                 {url.technologies}
               </TextP>
             </Container>
