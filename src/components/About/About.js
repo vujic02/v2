@@ -1,13 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap, { Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  Container,
-  SectionHeading,
-  Img,
-  TextP,
-  Grid,
-} from "../../global-styles";
+import { Container, SectionHeading, Img, TextP, Grid } from "../../global-styles";
 import styled from "styled-components";
 import { TimelineMax } from "gsap/gsap-core";
 
@@ -46,7 +40,7 @@ const About = () => {
     let tl = new TimelineMax({
       scrollTrigger: {
         trigger: section,
-        start: "center 70%",
+        start: "center 90%",
         end: "+=200",
       },
     });
@@ -62,46 +56,14 @@ const About = () => {
         },
         0.3
       )
-        .from(
-          textsRef.children[0],
-          { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 },
-          0.5
-        )
-        .from(
-          textsRef.children[1],
-          { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 },
-          0.7
-        )
-        .from(
-          itemsRef.children[0],
-          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-          0.9
-        )
-        .from(
-          itemsRef.children[1],
-          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-          1
-        )
-        .from(
-          itemsRef.children[2],
-          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-          1.1
-        )
-        .from(
-          itemsRef.children[3],
-          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-          1.2
-        )
-        .from(
-          itemsRef.children[4],
-          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-          1.3
-        )
-        .from(
-          itemsRef.children[5],
-          { opacity: 0, ease: Power3.easeIn, duration: 0.2 },
-          1.6
-        )
+        .from(textsRef.children[0], { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 }, 0.5)
+        .from(textsRef.children[1], { opacity: 0, x: -100, ease: Power3.easeInOut, duration: 0.5 }, 0.6)
+        .from(itemsRef.children[0], { opacity: 0, ease: Power3.easeIn, duration: 0.2 }, 0.7)
+        .from(itemsRef.children[1], { opacity: 0, ease: Power3.easeIn, duration: 0.2 }, 1)
+        .from(itemsRef.children[2], { opacity: 0, ease: Power3.easeIn, duration: 0.2 }, 1.1)
+        .from(itemsRef.children[3], { opacity: 0, ease: Power3.easeIn, duration: 0.2 }, 1.2)
+        .from(itemsRef.children[4], { opacity: 0, ease: Power3.easeIn, duration: 0.2 }, 1.3)
+        .from(itemsRef.children[5], { opacity: 0, ease: Power3.easeIn, duration: 0.2 }, 1.4)
         .from(imgRef.current, {
           opacity: 0,
           x: 100,
@@ -115,7 +77,7 @@ const About = () => {
         duration: 1,
         scrollTrigger: {
           trigger: aboutSectionRef.current,
-          start: "center bottom",
+          start: "top center",
           end: "+=200",
         },
         delay: 0.5,
@@ -133,37 +95,14 @@ const About = () => {
         <SectionHeading className="section-heading" ref={sectionRef}>
           About
         </SectionHeading>
-        <Grid
-          cols="1.8fr 1fr"
-          gridGap="10px"
-          colsM1="1fr"
-          gridGapM1="50px 0"
-          justifyM1="center"
-        >
+        <Grid cols="1.8fr 1fr" gridGap="10px" colsM1="1fr" gridGapM1="50px 0" justifyM1="center">
           <Container flexDir="column" ref={(el) => (textsRef = el)}>
-            <TextP
-              maxW="450px"
-              breakWord="break-word"
-              col="#fff"
-              m="0"
-              fontS="1.2rem"
-              fontF="'Montserrat', sans-serif"
-              fontW="200"
-            >
-              Hello, my name is Nikola Vujic and I enjoy building websites. My
-              journey as a web developer started in January of 2020. The journey
-              started out really hard, but I kept trying, pushing myself even
-              harder. In the process, I learned that I like to challenge myself
-              and to push my limits. I'm constantly looking forward to improving
-              my skills and meeting new people along the way.
+            <TextP maxW="450px" breakWord="break-word" col="#fff" m="0" fontS="1.2rem" fontF="'Montserrat', sans-serif" fontW="200">
+              Hello, my name is Nikola Vujic and I enjoy building websites. My journey as a web developer started in January of 2020. The journey
+              started out really hard, but I kept trying, pushing myself even harder. In the process, I learned that I like to challenge myself and to
+              push my limits. I'm constantly looking forward to improving my skills and meeting new people along the way.
             </TextP>
-            <TextP
-              fontS="1.2rem"
-              fontF="'Montserrat', sans-serif"
-              fontW="200"
-              col="#fff"
-              m="2rem 0 0 0"
-            >
+            <TextP fontS="1.2rem" fontF="'Montserrat', sans-serif" fontW="200" col="#fff" m="2rem 0 0 0">
               Here are few technologies that I used:
             </TextP>
             <Grid cols="repeat(2, 1fr)" ref={(el) => (itemsRef = el)}>
@@ -175,15 +114,7 @@ const About = () => {
               <ListItem>MongoDB</ListItem>
             </Grid>
           </Container>
-          <Img
-            ref={imgRef}
-            src="./misc/my-image.png"
-            w="320px"
-            h="400px"
-            objFit="cover"
-            borR="5px"
-            bor="1px solid var(--main)"
-          />
+          <Img ref={imgRef} src="./misc/my-image.png" w="320px" h="400px" objFit="cover" borR="5px" bor="1px solid var(--main)" />
         </Grid>
       </Container>
     </Container>

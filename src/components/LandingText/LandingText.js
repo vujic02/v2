@@ -16,26 +16,19 @@ const LandingText = () => {
     let fifth = textRef.children[4];
 
     tl.from(first, 1, { opacity: 0, y: 50, ease: Power3.easeOut })
-      .from(second, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.3)
-      .from(third, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.6)
-      .from(fourth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.9)
-      .from(fifth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 1.2);
+      .from(second, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.2)
+      .from(third, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.4)
+      .from(fourth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.6)
+      .from(fifth, 1, { opacity: 0, y: 50, ease: Power3.easeOut }, 0.85);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Container
-      flexDir="column"
-      align="center"
-      p="200px 0 400px 0"
-      alignText="center"
-      ref={(el) => (textRef = el)}
-    >
+    <Container flexDir="column" align="center" p="200px 0 400px 0" alignText="center" ref={(el) => (textRef = el)}>
       <P col={true}>Hi, my name is</P>
       <H2>Nikola Vujić.</H2>
       <H3>I make web apps.</H3>
       <P col={false} maxW={true}>
-        I'm a 18 year old front-end Web developer from Stara Pazova, Serbia. I
-        have a passion for creating dynamic, exquisite looking websites using
+        I'm a 18 year old front-end Web developer from Stara Pazova, Serbia. I have a passion for creating dynamic, exquisite looking websites using
         the latest known technologies.
       </P>
       <Container m="1rem 0 0 0">

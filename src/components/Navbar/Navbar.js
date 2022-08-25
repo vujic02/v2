@@ -27,6 +27,7 @@ const Navbar = ({ show, setIsOpened }) => {
     let second = navLinks.children[1];
     let third = navLinks.children[2];
     let fourth = navLinks.children[3];
+    let fifth = navLinks.children[4];
 
     TweenMax.from(navLogo.current, 1.5, {
       opacity: 0,
@@ -34,9 +35,10 @@ const Navbar = ({ show, setIsOpened }) => {
     });
 
     tl.from(first, 1, { opacity: 0, y: -100, ease: Power3.easeOut })
-      .from(second, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.3)
-      .from(third, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.6)
-      .from(fourth, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.9);
+      .from(second, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.2)
+      .from(third, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.4)
+      .from(fourth, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.6)
+      .from(fifth, 1, { opacity: 0, y: -100, ease: Power3.easeOut }, 0.8);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
@@ -60,27 +62,42 @@ const Navbar = ({ show, setIsOpened }) => {
             m="0 1rem 0 0"
             cur="pointer"
             fontF="'Inconsolata', monospace"
+            insideText="#fff"
+            insideTextH="var(--main)"
+            transitionInsideText="0.2s ease-in all"
           >
             01.
-            <span className="nav-link">About</span>
+            <span>About</span>
           </TextP>
         </Link>
-        <Link
-          to="projects"
-          spy={true}
-          smooth={true}
-          duration={500}
-          offset={100}
-        >
+        <Link to="projects" spy={true} smooth={true} duration={500} offset={100}>
           <TextP
             col="var(--main)"
             fontS="1rem"
             m="0 1rem 0 0"
             cur="pointer"
             fontF="'Inconsolata', monospace"
+            insideText="#fff"
+            insideTextH="var(--main)"
+            transitionInsideText="0.2s ease-in all"
           >
             02.
-            <span className="nav-link">Projects</span>
+            <span>Projects</span>
+          </TextP>
+        </Link>
+        <Link to="work" spy={true} smooth={true} duration={500}>
+          <TextP
+            col="var(--main)"
+            fontS="1rem"
+            m="0 1rem 0 0"
+            cur="pointer"
+            fontF="'Inconsolata', monospace"
+            insideText="#fff"
+            insideTextH="var(--main)"
+            transitionInsideText="0.2s ease-in all"
+          >
+            03.
+            <span>Work</span>
           </TextP>
         </Link>
         <Link to="contact" spy={true} smooth={true} duration={500}>
@@ -90,21 +107,24 @@ const Navbar = ({ show, setIsOpened }) => {
             m="0 1rem 0 0"
             cur="pointer"
             fontF="'Inconsolata', monospace"
+            insideText="#fff"
+            insideTextH="var(--main)"
+            transitionInsideText="0.2s ease-in all"
           >
-            03.
-            <span className="nav-link">Contact</span>
+            04.
+            <span>Contact</span>
           </TextP>
         </Link>
         <Button
           col="var(--main)"
-          fontS="1.2rem"
+          fontS="1rem"
           m="0 1rem 0 0"
           cur="pointer"
           fontF="'Inconsolata', monospace"
           bor="1px solid var(--main)"
           p=".5rem"
-          bgH="var(--main)"
-          colH="var(--white)"
+          bgH="var(--mainTransparent)"
+          colH="#fff"
         >
           <a href="/cv.pdf" target="_blank" rel="noreferrer">
             Resume/CV

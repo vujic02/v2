@@ -17,19 +17,12 @@ const Contact = () => {
         start: "center bottom",
         end: "+=200",
       },
-      stagger: 0.5,
+      stagger: 0.3,
     });
   }, []);
 
   return (
-    <Container
-      name="contact"
-      flexDir="column"
-      justify="center"
-      align="center"
-      p="16rem 0 8rem 0"
-      className="contact"
-    >
+    <Container name="contact" flexDir="column" justify="center" align="center" p="16rem 0 8rem 0" className="contact">
       <Heading m="0" className="contactStagger">
         Contact
       </Heading>
@@ -54,9 +47,8 @@ const Contact = () => {
           alignText="center"
           className="contactStagger"
         >
-          I’m currently constantly looking for improvement and new
-          opportunities. My inbox is open to everyone, whether you have a job
-          offer, question or just want to say hi, feel free to send me an email.
+          I’m currently constantly looking for improvement and new opportunities. My inbox is open to everyone, whether you have a job offer, question
+          or just want to say hi, feel free to send me an email.
         </TextP>
       </Container>
       <Container maxW="180px" m="1rem 0 0 0" className="contactStagger">

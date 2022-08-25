@@ -1,20 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Main } from "./global-styles";
-import {
-  Navbar,
-  Sidebar,
-  Background,
-  About,
-  LandingText,
-  Projects,
-  Contact,
-  SideIcons,
-  Footer,
-} from "./components/index";
+import { Navbar, Sidebar, Background, About, LandingText, Projects, Contact, SideIcons, Footer, Work } from "./components/index";
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
   let mainRef = useRef();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
     if (isOpened) {
@@ -35,6 +29,7 @@ function App() {
         <LandingText />
         <About />
         <Projects />
+        <Work />
         <Contact />
       </Main>
       <SideIcons />

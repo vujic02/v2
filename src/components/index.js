@@ -7,5 +7,6 @@ import Contact from "./Contact/Contact";
 import Background from "./Background/Background";
 import Footer from "./Footer/Footer";
 import SideIcons from "./SideIcons/SideIcons";
+import Work from "./Work/Work";
 
-export {LandingText, Navbar, SideIcons, Sidebar, About, Projects, Contact, Background, Footer}
+export { LandingText, Navbar, SideIcons, Sidebar, About, Projects, Contact, Background, Footer, Work };
