@@ -1,19 +1,8 @@
 import React from "react";
-import {
-  ImageContainer,
-  GithubIcon,
-  WebpageIcon,
-  Redirect,
-} from "./image-style";
+import { ImageContainer, GithubIcon, WebpageIcon, Redirect } from "./image-style";
 import { Container } from "../../global-styles";
 
-const ScrollingImage = ({
-  imgUrl,
-  imgHeight,
-  trans,
-  githubUrl,
-  livepageUrl,
-}) => {
+const ScrollingImage = ({ imgUrl, imgHeight, trans, githubUrl, livepageUrl }) => {
   return (
     <Redirect href={githubUrl}>
       <ImageContainer imgUrl={imgUrl} imgHeight={imgHeight} trans={trans}>

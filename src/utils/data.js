@@ -53,6 +53,24 @@ export const urls = [
     githubUrl: "https://github.com/vujic02/NASA-Planet-Pages-Clone",
     livepageUrl: "https://solar-system-exploration.netlify.app/",
   },
+  {
+    imgUrl: "./websites/Loplo.png",
+    imgHeight: "-360px",
+    transition: "2.5s",
+    technologies: "Next.js, React.js, Tailwind CSS, Firebase, Youtube Iframe API",
+    name: "Loplo",
+    githubUrl: "#not-available",
+    livepageUrl: "https://loplo.com",
+  },
+  {
+    imgUrl: "./websites/tasks-app-vue.png",
+    imgHeight: "0px",
+    transition: "2.5s",
+    technologies: "Vue.js, Firebase, Tailwind CSS",
+    name: "Tasks app",
+    githubUrl: "https://github.com/vujic02/tasks-app",
+    livepageUrl: "#not-available",
+  },
 ];
 
 export const socialMedia = {
