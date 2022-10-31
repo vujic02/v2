@@ -109,9 +109,9 @@ const About = () => {
               <ListItem>React.js</ListItem>
               <ListItem>Next.js(SSG)</ListItem>
               <ListItem>JavaScript(ES6+)</ListItem>
-              <ListItem>Node.js</ListItem>
-              <ListItem>Express.js</ListItem>
-              <ListItem>MongoDB</ListItem>
+              <ListItem>TypeScript</ListItem>
+              <ListItem>Firebase</ListItem>
+              <ListItem>React Native</ListItem>
             </Grid>
           </Container>
           <Img ref={imgRef} src="./misc/my-image.png" w="320px" h="400px" objFit="cover" borR="5px" bor="1px solid var(--main)" />

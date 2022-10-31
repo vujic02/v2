@@ -28,7 +28,7 @@ const LandingText = () => {
       <H2>Nikola Vujić.</H2>
       <H3>I make web apps.</H3>
       <P col={false} maxW={true}>
-        I'm a 18 year old front-end Web developer from Stara Pazova, Serbia. I have a passion for creating dynamic, exquisite looking websites using
+        I'm a 20 year old Front-End Web developer from Stara Pazova, Serbia. I have a passion for creating dynamic, exquisite looking websites using
         the latest known technologies.
       </P>
       <Container m="1rem 0 0 0">

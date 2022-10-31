@@ -166,13 +166,13 @@ const Work = () => {
                 Frontend Developer <span style={{ marginLeft: "2px" }}>@ yadada</span>
               </TextH1>
               <TextP col="var(--grayThird)" fontS="14px" fontW="300" m="4px 0 20px 0">
-                January 2022 - Present
+                January 2022 - October 2022
               </TextP>
               <List>
                 <ListItem>Write modern, performant, maintainable code while working in a team. </ListItem>
                 <ListItem>
-                  Work with a variety of different languages, platforms and frameworks such as JavaScript, TypeScript, React.js, Next.js, Firebase and
-                  Netlify.
+                  Work with a variety of different languages, platforms and frameworks such as JavaScript, TypeScript, React.js, Next.js, Firebase,
+                  Netlify & Youtube IFrame API.
                 </ListItem>
                 <ListItem>Communicate with multi-disciplinary team of developers and designers on a daily basis.</ListItem>
               </List>
