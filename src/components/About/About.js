@@ -98,9 +98,10 @@ const About = () => {
         <Grid cols="1.8fr 1fr" gridGap="10px" colsM1="1fr" gridGapM1="50px 0" justifyM1="center">
           <Container flexDir="column" ref={(el) => (textsRef = el)}>
             <TextP maxW="450px" breakWord="break-word" col="#fff" m="0" fontS="1.2rem" fontF="'Montserrat', sans-serif" fontW="200">
-              Hello, my name is Nikola Vujic and I enjoy building websites. My journey as a web developer started in January of 2020. The journey
-              started out really hard, but I kept trying, pushing myself even harder. In the process, I learned that I like to challenge myself and to
-              push my limits. I'm constantly looking forward to improving my skills and meeting new people along the way.
+              Hey there, I'm Nikola Vujic, and I'm passionate about the art of building websites. My venture into the realm of web development kicked
+              off in January 2020. It wasn't a walk in the park initially, but I persevered, pushing my boundaries. Through this journey, I discovered
+              a love for challenging myself and pushing my limits. I'm always eager to enhance my skills and connect with fellow enthusiasts on this
+              exciting path.
             </TextP>
             <TextP fontS="1.2rem" fontF="'Montserrat', sans-serif" fontW="200" col="#fff" m="2rem 0 0 0">
               Here are few technologies that I used:

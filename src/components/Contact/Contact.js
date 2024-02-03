@@ -47,8 +47,8 @@ const Contact = () => {
           alignText="center"
           className="contactStagger"
         >
-          I’m currently constantly looking for improvement and new opportunities. My inbox is open to everyone, whether you have a job offer, question
-          or just want to say hi, feel free to send me an email.
+          I'm always on the lookout for ways to grow and explore new possibilities. My inbox welcomes everyone—whether you have a job offer, a
+          question, or just want to say hi, don't hesitate to shoot me an email.
         </TextP>
       </Container>
       <Container maxW="180px" m="1rem 0 0 0" className="contactStagger">
