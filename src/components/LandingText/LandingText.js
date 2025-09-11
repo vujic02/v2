@@ -28,7 +28,7 @@ const LandingText = () => {
       <H2>Nikola Vujić.</H2>
       <H3>I make web apps.</H3>
       <P col={false} maxW={true}>
-        I'm a 21-year-old Web developer based in Stara Pazova, Serbia. I'm deeply passionate about crafting visually appealing and dynamic websites,
+        I'm a 22-year-old Web developer based in Stara Pazova, Serbia. I'm deeply passionate about crafting visually appealing and dynamic websites,
         utilizing the latest technologies available.
       </P>
       <Container m="1rem 0 0 0">
