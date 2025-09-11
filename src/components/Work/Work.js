@@ -30,7 +30,8 @@ const ListItem = styled.li`
 `;
 
 const Work = () => {
-  const [selected, setSelected] = useState(2);
+  // Default to newest role
+  const [selected, setSelected] = useState(3);
   let headingRef = useRef();
   let gridRef = useRef();
   let workSectionRef = useRef();
@@ -90,6 +91,35 @@ const Work = () => {
         </SectionHeading>
         <Grid cols="0.2fr 0.8fr" colsM2="1fr" gridGap="10px" gridGapM1="50px 0" ref={(el) => (gridRef = el)}>
           <Container flexDir="column" flexDirM2="row" justifyM2="center">
+            {/* Impleo Solutions */}
+            <Container
+              flexDir="row"
+              justify="start"
+              justifyM2="center"
+              align="center"
+              borderL={selected === 3 ? "2px solid var(--main)" : "2px solid var(--gray)"}
+              borderLM2="0px"
+              borderLM2H="0px"
+              borderBM2={selected === 3 ? "2px solid var(--main)" : "2px solid var(--gray)"}
+              borderBM2H={selected === 3 ? "2px solid var(--turquoise)" : "2px solid var(--gray)"}
+              borderLH={selected === 3 ? "2px solid var(--turquoise)" : "2px solid var(--gray)"}
+              color={selected === 3 ? "var(--main)" : "var(--graySecondary)"}
+              colorH={selected === 3 ? "var(--turquoise)" : "var(--gray)"}
+              transition="0.2s ease-in all"
+              p="0 0 0 12px"
+              h="123px"
+              hM2="50px"
+              wM2="150px"
+              wM3="50%"
+              cursor="pointer"
+              onClick={() => setSelected(3)}
+            >
+              <TextP maxW="450px" breakWord="break-word" m="0" fontS="1.2rem" fontSM3="1rem" fontF="'Montserrat', sans-serif" fontW="200">
+                Impleo Solutions
+              </TextP>
+            </Container>
+
+            {/* Royal Fox */}
             <Container
               flexDir="row"
               justify="start"
@@ -116,6 +146,8 @@ const Work = () => {
                 Royal Fox
               </TextP>
             </Container>
+
+            {/* yadada */}
             <Container
               flexDir="row"
               justify="start"
@@ -142,6 +174,8 @@ const Work = () => {
                 yadada
               </TextP>
             </Container>
+
+            {/* MTopTech */}
             <Container
               flexDir="row"
               justify="start"
@@ -169,6 +203,31 @@ const Work = () => {
               </TextP>
             </Container>
           </Container>
+
+          {/* Impleo Solutions Content */}
+          {selected === 3 && (
+            <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
+              <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
+                Software Developer <span style={{ marginLeft: "2px" }}>@ Impleo Solutions</span>
+              </TextH1>
+              <TextP col="var(--grayThird)" fontS="14px" fontW="300" m="4px 0 20px 0">
+                October 2024 - Present
+              </TextP>
+              <List>
+                <ListItem>
+                  Design, build, and maintain features for an interim workforce management application using Java, JSP, and MySQL.
+                </ListItem>
+                <ListItem>
+                  Implement database interactions with Hibernate and legacy JDBC, ensuring data integrity and performance.
+                </ListItem>
+                <ListItem>
+                  Collaborate on bug fixes, feature enhancements, and optimizations to support efficient client, agency, and worker workflows.
+                </ListItem>
+              </List>
+            </Container>
+          )}
+
+          {/* Royal Fox Content */}
           {selected === 2 && (
             <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
               <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
@@ -190,6 +249,8 @@ const Work = () => {
               </List>
             </Container>
           )}
+
+          {/* yadada Content */}
           {selected === 1 && (
             <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
               <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
@@ -208,6 +269,8 @@ const Work = () => {
               </List>
             </Container>
           )}
+
+          {/* MTopTech Content */}
           {selected === 0 && (
             <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
               <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
