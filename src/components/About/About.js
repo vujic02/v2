@@ -107,12 +107,12 @@ const About = () => {
               Here are few technologies that I used:
             </TextP>
             <Grid cols="repeat(2, 1fr)" ref={(el) => (itemsRef = el)}>
-              <ListItem>React.js</ListItem>
+              <ListItem>React.js & React Native</ListItem>
               <ListItem>Next.js(SSG)</ListItem>
               <ListItem>JavaScript(ES6+)</ListItem>
               <ListItem>TypeScript</ListItem>
-              <ListItem>Firebase</ListItem>
-              <ListItem>React Native</ListItem>
+              <ListItem>Java</ListItem>
+              <ListItem>SQL & NoSQL DB's</ListItem>
             </Grid>
           </Container>
           <Img ref={imgRef} src="./misc/my-image.png" w="320px" h="400px" objFit="cover" borR="5px" bor="1px solid var(--main)" />
