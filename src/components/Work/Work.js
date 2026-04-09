@@ -31,7 +31,7 @@ const ListItem = styled.li`
 
 const Work = () => {
   // Default to newest role
-  const [selected, setSelected] = useState(3);
+  const [selected, setSelected] = useState(2);
   let headingRef = useRef();
   let gridRef = useRef();
   let workSectionRef = useRef();
@@ -59,7 +59,7 @@ const Work = () => {
             ease: Power3.easeOut,
             duration: 1,
           },
-          0.3
+          0.3,
         )
           .from(gridRef.children[0], { opacity: 0, x: 0, ease: Power3.easeInOut, duration: 0.5 }, 0.4)
           .from(gridRef.children[1], { opacity: 0, x: 100, ease: Power3.easeInOut, duration: 0.5 }, 0.6);
@@ -97,34 +97,6 @@ const Work = () => {
               justify="start"
               justifyM2="center"
               align="center"
-              borderL={selected === 3 ? "2px solid var(--main)" : "2px solid var(--gray)"}
-              borderLM2="0px"
-              borderLM2H="0px"
-              borderBM2={selected === 3 ? "2px solid var(--main)" : "2px solid var(--gray)"}
-              borderBM2H={selected === 3 ? "2px solid var(--turquoise)" : "2px solid var(--gray)"}
-              borderLH={selected === 3 ? "2px solid var(--turquoise)" : "2px solid var(--gray)"}
-              color={selected === 3 ? "var(--main)" : "var(--graySecondary)"}
-              colorH={selected === 3 ? "var(--turquoise)" : "var(--gray)"}
-              transition="0.2s ease-in all"
-              p="0 0 0 12px"
-              h="123px"
-              hM2="50px"
-              wM2="150px"
-              wM3="50%"
-              cursor="pointer"
-              onClick={() => setSelected(3)}
-            >
-              <TextP maxW="450px" breakWord="break-word" m="0" fontS="1.2rem" fontSM3="1rem" fontF="'Montserrat', sans-serif" fontW="200">
-                Impleo Solutions
-              </TextP>
-            </Container>
-
-            {/* Royal Fox */}
-            <Container
-              flexDir="row"
-              justify="start"
-              justifyM2="center"
-              align="center"
               borderL={selected === 2 ? "2px solid var(--main)" : "2px solid var(--gray)"}
               borderLM2="0px"
               borderLM2H="0px"
@@ -143,11 +115,11 @@ const Work = () => {
               onClick={() => setSelected(2)}
             >
               <TextP maxW="450px" breakWord="break-word" m="0" fontS="1.2rem" fontSM3="1rem" fontF="'Montserrat', sans-serif" fontW="200">
-                Royal Fox
+                Impleo Solutions
               </TextP>
             </Container>
 
-            {/* yadada */}
+            {/* Royal Fox */}
             <Container
               flexDir="row"
               justify="start"
@@ -171,11 +143,11 @@ const Work = () => {
               onClick={() => setSelected(1)}
             >
               <TextP maxW="450px" breakWord="break-word" m="0" fontS="1.2rem" fontSM3="1rem" fontF="'Montserrat', sans-serif" fontW="200">
-                yadada
+                Royal Fox
               </TextP>
             </Container>
 
-            {/* MTopTech */}
+            {/* yadada */}
             <Container
               flexDir="row"
               justify="start"
@@ -199,36 +171,33 @@ const Work = () => {
               onClick={() => setSelected(0)}
             >
               <TextP maxW="450px" breakWord="break-word" m="0" fontS="1.2rem" fontSM3="1rem" fontF="'Montserrat', sans-serif" fontW="200">
-                MTopTech
+                yadada
               </TextP>
             </Container>
           </Container>
 
           {/* Impleo Solutions Content */}
-          {selected === 3 && (
+          {selected === 2 && (
             <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
               <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
-                Software Developer <span style={{ marginLeft: "2px" }}>@ Impleo Solutions</span>
+                Full Stack Developer <span style={{ marginLeft: "2px" }}>@ Impleo Solutions</span>
               </TextH1>
               <TextP col="var(--grayThird)" fontS="14px" fontW="300" m="4px 0 20px 0">
                 October 2024 - Present
               </TextP>
               <List>
                 <ListItem>
-                  Design, build, and maintain features for an interim workforce management application using Java, JSP, and MySQL.
+                  Design, build, and maintain features for an interim workforce management application using Java 21, Spring Boot, Thymeleaf, JSP, and MySQL.
                 </ListItem>
-                <ListItem>
-                  Implement database interactions with Hibernate and legacy JDBC, ensuring data integrity and performance.
-                </ListItem>
-                <ListItem>
-                  Collaborate on bug fixes, feature enhancements, and optimizations to support efficient client, agency, and worker workflows.
-                </ListItem>
+                <ListItem>Implement database interactions with JPA/Hibernate, legacy JDBC, and Flyway migrations, ensuring data integrity and performance.</ListItem>
+                <ListItem>Build responsive UIs with Tailwind CSS and integrate external services including AWS S3, Mailjet, and PDFBox.</ListItem>
+                <ListItem>Collaborate on bug fixes, feature enhancements, and optimizations to support efficient client, agency, and worker workflows.</ListItem>
               </List>
             </Container>
           )}
 
           {/* Royal Fox Content */}
-          {selected === 2 && (
+          {selected === 1 && (
             <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
               <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
                 Frontend Developer <span style={{ marginLeft: "2px" }}>@ Royal Fox s.r.o.</span>
@@ -237,21 +206,15 @@ const Work = () => {
                 February 2023 - September 2023
               </TextP>
               <List>
-                <ListItem>
-                  Develop new features, solve bugs, research future implementations of new features and fix issues while working in a small team.
-                </ListItem>
-                <ListItem>
-                  Work with a variety of different languages, platforms, frameworks and API's such as JavaScript, React Native, KateX, Expo
-                </ListItem>
-                <ListItem>
-                  Ensured seamless functionality on both iOS and Android platforms by rigorously testing and optimizing the application
-                </ListItem>
+                <ListItem>Develop new features, solve bugs, research future implementations of new features and fix issues while working in a small team.</ListItem>
+                <ListItem>Work with a variety of different languages, platforms, frameworks and API's such as JavaScript, React Native, KateX, Expo</ListItem>
+                <ListItem>Ensured seamless functionality on both iOS and Android platforms by rigorously testing and optimizing the application</ListItem>
               </List>
             </Container>
           )}
 
           {/* yadada Content */}
-          {selected === 1 && (
+          {selected === 0 && (
             <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
               <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
                 Frontend Developer <span style={{ marginLeft: "2px" }}>@ yadada s.r.o.</span>
@@ -262,30 +225,10 @@ const Work = () => {
               <List>
                 <ListItem>Write modern, performant, maintainable code while working in a team. </ListItem>
                 <ListItem>
-                  Work with a variety of different languages, platforms and frameworks such as JavaScript, TypeScript, React.js, Next.js, Firebase,
-                  Netlify & Youtube IFrame API.
+                  Work with a variety of different languages, platforms and frameworks such as JavaScript, TypeScript, React.js, Next.js, Firebase, Netlify & Youtube
+                  IFrame API.
                 </ListItem>
                 <ListItem>Communicate with multi-disciplinary team of developers and designers on a daily basis.</ListItem>
-              </List>
-            </Container>
-          )}
-
-          {/* MTopTech Content */}
-          {selected === 0 && (
-            <Container flexDir="column" m="0 0 0 8px" fontF="'Montserrat', sans-serif">
-              <TextH1 col="var(--grayThird)" fontS="22px" fontW="500" insideText="var(--main)" m="0">
-                Internship <span style={{ marginLeft: "2px" }}>@ MTopTech</span>
-              </TextH1>
-              <TextP col="var(--grayThird)" fontS="14px" fontW="300" m="4px 0 20px 0">
-                July 2021 - November 2021
-              </TextP>
-              <List>
-                <ListItem>
-                  Learn new languages, libraries, frameworks & content managment systems (PHP, Laravel, Vue.js, React-Native, Wordpress and
-                  WinterCMS).
-                </ListItem>
-                <ListItem>Help out with maintaining and writing clean code while working with a friend.</ListItem>
-                <ListItem>Development of company's website.</ListItem>
               </List>
             </Container>
           )}
